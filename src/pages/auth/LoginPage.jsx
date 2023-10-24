@@ -5,7 +5,7 @@ import { Alert, Button, Grid, Link, TextField, Typography } from "@mui/material"
 import { Google } from '@mui/icons-material';
 import { AuthLayout } from '../../components';
 import useForm from '../../hooks/useForm';
-import { checkingAuthentication, startGoogleSignIn, startLoginUser } from '../../store/auth/thunks';
+import { startGoogleSignIn, startLoginUser } from '../../store/auth/thunks';
 
 
 export const LoginPage = () => {
@@ -33,7 +33,10 @@ export const LoginPage = () => {
 
   return (
       <AuthLayout title='Login'>
-        <form onSubmit={onSubmit}>
+        <form
+          onSubmit={onSubmit}
+          className='animate__animated animate__fadeIn animate__faster'
+        >
           <Grid container>
             <Grid item xs={12} sx={{mt: 2}}>
               <TextField
